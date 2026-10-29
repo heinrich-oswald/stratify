@@ -1,0 +1,71 @@
+.workspacePage {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px 16px;
+  background: var(--color-background);
+}
+
+.workspaceShell {
+  width: min(1100px, 100%);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 28px;
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.06);
+  padding: 28px;
+}
+
+.workspaceHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.workspaceHeader h1 {
+  font-family: var(--font-manrope);
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.06em;
+  color: var(--color-primary-text);
+}
+
+.workspaceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.workspaceCard {
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  padding: 20px;
+}
+
+.workspaceCard strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 1.15rem;
+  color: var(--color-primary-text);
+}
+
+.cardEyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-secondary-text);
+}
+
+@media (max-width: 700px) {
+  .workspaceGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .workspaceHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

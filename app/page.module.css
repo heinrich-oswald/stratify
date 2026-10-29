@@ -1,150 +1,149 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
+.authPage {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px 16px;
+  background:
+    radial-gradient(circle at top left, rgba(96, 165, 250, 0.18), transparent 20%),
+    linear-gradient(180deg, #f8fafc 0%, #edf4ff 100%);
+}
 
-  --text-primary: #000;
-  --text-secondary: #666;
+.authCard {
+  width: min(980px, 100%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--color-border);
+  border-radius: 28px;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+}
 
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
+.authIntro {
+  background: linear-gradient(160deg, #0f172a 0%, #1d4ed8 100%);
+  color: white;
+  padding: 40px 32px;
+}
 
-  display: flex;
-  flex: 1;
-  flex-direction: column;
+.brandWrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.brandMark {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  font-weight: 800;
+  font-family: var(--font-manrope);
 }
 
-.main {
-  display: flex;
-  flex: 1;
-  width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
+.brandText {
+  font-family: var(--font-manrope);
+  font-size: 1.1rem;
+  font-weight: 700;
 }
 
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
+.kicker {
+  margin-bottom: 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(191, 219, 254, 0.9);
 }
 
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
+.authIntro h1 {
+  font-size: clamp(2.25rem, 4vw, 3.2rem);
+  line-height: 1.08;
+  letter-spacing: -0.06em;
+  margin: 0;
 }
 
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
+.subtitle {
+  margin-top: 18px;
+  color: rgba(224, 242, 254, 0.9);
+  line-height: 1.7;
+  max-width: 430px;
 }
 
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
+.authForm {
+  display: grid;
+  gap: 18px;
+  padding: 40px 32px;
+  background: white;
 }
 
-.ctas {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
-}
-
-.ctas a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
-}
-
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
+.inputGroup {
+  display: grid;
   gap: 8px;
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
+.inputGroup label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-secondary-text);
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
+.inputGroup input {
+  width: 100%;
+  border: 1px solid var(--color-border);
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 0.85rem 0.95rem;
+  font: inherit;
+  color: var(--color-primary-text);
 }
 
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
-  }
-
-  .intro {
-    gap: 16px;
-  }
-
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
-  }
+.inputGroup input:focus {
+  outline: 3px solid rgba(147, 197, 253, 0.4);
+  border-color: var(--color-primary);
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
-
-  .page {
-    --background: #000;
-    --foreground: #000;
-
-    --text-primary: #ededed;
-    --text-secondary: #999;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
-  }
+.primaryButton,
+.secondaryButton {
+  appearance: none;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  font: inherit;
+  font-weight: 700;
+  padding: 0.95rem 1.1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-.code {
-  font-family: var(--font-geist-mono);
-  font-size: 0.9em;
-  background: color-mix(in srgb, currentColor 8%, transparent);
-  padding: 0.1em 0.4em;
-  border-radius: 6px;
+.primaryButton {
+  background: var(--color-primary);
+  color: white;
+}
+
+.secondaryButton {
+  background: transparent;
+  border-color: var(--color-border);
+  color: var(--color-primary-text);
+}
+
+.primaryButton:hover,
+.secondaryButton:hover {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 760px) {
+  .authCard {
+    grid-template-columns: 1fr;
+  }
+
+  .authIntro,
+  .authForm {
+    padding: 28px 22px;
+  }
 }
